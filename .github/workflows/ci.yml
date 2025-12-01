@@ -1,37 +1,36 @@
-name: CI - Jest API Test Only
+name: Node.js CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
 
 jobs:
-  api-test:
+  test:
     runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x]  # Puedes ajustar a la versión que uses
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 18
+          node-version: ${{ matrix.node-version }}
           cache: "npm"
 
       - name: Install dependencies
-        run: npm install
+        run: |
+          npm install
+          # Asegúrate de que estas dependencias estén en devDependencies
+          npm install --save-dev jest ts-jest @types/jest typescript
 
-      # Ejecutar el servidor mock con ts-node (en background)
-      - name: Start mock server
-        run: npx ts-node mockServer.ts &
-      
-      # Esperar a que el servidor responda
-      - name: Wait for server to be ready
-        uses: jakejarvis/wait-action@v0.1.1
-        with:
-          url: http://localhost:5000/agent/respond
-          timeout: 25
-
-      # Ejecutar SOLO api.test.ts
-      - name: Run API Jest test
-        run: npx jest tests/api.test.ts --runInBand
+      - name: Run tests
+        run: npx jest --runInBand
