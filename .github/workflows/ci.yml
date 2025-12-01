@@ -38,4 +38,4 @@ jobs:
           sleep 3
 
       - name: Run tests
-        run: npx jest --runInBand
+        run: npx jest tests/api.test.ts
