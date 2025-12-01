@@ -14,23 +14,28 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [20.x]  # Puedes ajustar a la versión que uses
+        node-version: [20.x]
 
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: 'npm'
 
       - name: Install dependencies
         run: |
           npm install
-          # Asegúrate de que estas dependencias estén en devDependencies
-          npm install --save-dev jest ts-jest @types/jest typescript
+          npm install --save-dev jest ts-jest @types/jest typescript ts-node
+
+      - name: Start mock server
+        run: |
+          npx ts-node mockServer.ts &
+          # Espera 2-3 segundos para que el servidor levante
+          sleep 3
 
       - name: Run tests
         run: npx jest --runInBand
