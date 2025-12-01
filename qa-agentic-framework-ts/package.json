@@ -14,9 +14,7 @@
   "author": "",
   "license": "ISC",
   "type": "module",
-  "jest":{
-    "extensionsToTreatAsEsm": [".ts"]
-  },
+
   "dependencies": {
     "@playwright/test": "^1.57.0",
     "@types/jest": "^30.0.0",
