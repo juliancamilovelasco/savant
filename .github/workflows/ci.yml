@@ -34,23 +34,12 @@ jobs:
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
-        run: |
-          npx ts-node qa-agentic-framework-ts/mockServer.ts &
-          SERVER_PID=$!
-          # Esperar hasta que el puerto 5000 esté abierto
-          for i in {1..10}; do
-            if nc -z localhost 5000; then
-              echo "Server is up!"
-              break
-            fi
-            echo "Waiting for server..."
-            sleep 1
-          done
-          echo $SERVER_PID >> server.pid
+        run: npx ts-node --esm false qa-agentic-framework-ts/mockServer.ts &
+         
 
       # 5️⃣ Ejecutar tests con Jest
       - name: Run tests
-        run: npx jest --runInBand
+        run: npx jest tests/api.test.ts
 
       # 6️⃣ Terminar el servidor
       - name: Stop mock server
