@@ -27,13 +27,10 @@ jobs:
           cache: 'npm'
 
       # 3️⃣ Instalar dependencias compatibles
-      - name: Install dependencies
-        run: |
-          npm install
-          # Instalar ts-node y types necesarios
-          npm install --save-dev ts-node @types/node @types/express @types/cors
-          # Asegurarse de usar ts-jest versión existente
-          npm install --save-dev ts-jest@29.4.5 @types/jest jest@30.2.0 typescript
+      - name: Install TypeScript and ts-node
+  run: |
+    npm install typescript@5.4.0 --save-dev
+    npm install ts-node@10.9.2 --save-dev
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
