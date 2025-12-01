@@ -32,6 +32,7 @@ const intentsMap: Record<string, IntentData> = {
  
 // === Endpoint: /agent/respond ===
 app.post('/agent/respond', (req: Request, res: Response) => {
+  console.log('Received payload *************** VALIDAR *************:', req.body);
   const { message } = req.body;
  
   if (!message || message.trim() === '') {
