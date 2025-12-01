@@ -29,8 +29,8 @@ jobs:
       # 3️⃣ Instalar dependencias compatibles
       - name: Install dependencies
         run: |
-          npm ci
           npm install typescript@5.4.0 ts-node@10.9.2 --save-dev
+          npm ci
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
