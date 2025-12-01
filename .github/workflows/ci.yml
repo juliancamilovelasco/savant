@@ -41,7 +41,7 @@ jobs:
 
       # 5️⃣ Ejecutar tests con Jest
       - name: Run tests
-        run: npx jest tests/api.test.ts
+        run: npx jest --experimental-vm-modules tests/api.test.ts
 
       # 6️⃣ Terminar el servidor
       - name: Stop mock server
