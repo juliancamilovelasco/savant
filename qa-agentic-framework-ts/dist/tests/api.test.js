@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const apiClient_1 = require("../src/utils/apiClient");
+const apiClient_js_1 = require("../src/utils/apiClient.js");
 const ajv_1 = __importDefault(require("ajv"));
 const ajv = new ajv_1.default();
 const schema = {
@@ -23,7 +23,7 @@ const schema = {
     },
     required: ['intent', 'response']
 };
-const client = new apiClient_1.APIClient('http://localhost:5000'); //API client pointing to mock server
+const client = new apiClient_js_1.APIClient('http://localhost:5000'); //API client pointing to mock server
 test('Valid response', () => __awaiter(void 0, void 0, void 0, function* () {
     const start = Date.now();
     const res = yield client.sendMessage('Julian_1');

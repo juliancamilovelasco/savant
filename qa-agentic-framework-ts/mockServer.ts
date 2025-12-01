@@ -1,6 +1,7 @@
-import express from 'express';
-import cors from 'cors';
-import type { Request, Response } from 'express';
+const express = require('express');
+const cors = require('cors');
+type Request = import('express').Request;
+type Response = import('express').Response;
  
 const app = express();
  

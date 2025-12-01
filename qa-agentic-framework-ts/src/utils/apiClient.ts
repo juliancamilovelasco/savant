@@ -1,6 +1,6 @@
-import axios from 'axios';
+const axios = require('axios');
 
-export class APIClient {
+class APIClient {
   constructor(private baseUrl: string) {}
 
   async sendMessage(message: string) {

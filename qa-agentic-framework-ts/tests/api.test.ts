@@ -1,6 +1,6 @@
 
-import { APIClient } from '../src/utils/apiClient';
-import Ajv from 'ajv';
+const { APIClient } = require('../src/utils/apiClient');
+const Ajv = require('ajv');
  
 const ajv = new Ajv();
 const schema = {
