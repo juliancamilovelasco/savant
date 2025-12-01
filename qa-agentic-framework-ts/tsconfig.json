@@ -7,12 +7,9 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "outDir": "./dist",
-    "module": "commonjs",
-    "target": "ES2020",
+    "module": "esnext",
+    "target": "es6",
     "types": ["jest"],
-  
-    
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
@@ -43,7 +40,7 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-    "moduleResolution": "node",
+      "moduleResolution": "node",
   "esModuleInterop": true
   }
 }

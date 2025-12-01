@@ -34,7 +34,7 @@ jobs:
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
-        run: npx ts-node --esm false qa-agentic-framework-ts/mockServer.ts &
+        run: npx ts-node --esm qa-agentic-framework-ts/mockServer.ts &
          
 
       # 5️⃣ Ejecutar tests con Jest
