@@ -7,8 +7,7 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "outDir": "./dist",
-    "module": "commonjs",
+    "module": "esnext",
     "target": "es6",
     "types": ["jest"],
     // For nodejs:
