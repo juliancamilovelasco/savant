@@ -33,9 +33,10 @@ jobs:
 
       - name: Start mock server
         run: |
-          npx ts-node mockServer.ts &
+          npx ts-node qa-agentic-framework-ts/mockServer.ts &
+          SERVER_PID=$!
           # Espera 2-3 segundos para que el servidor levante
-          sleep 3
+          sleep 8
 
       - name: Run tests
         run: npx jest tests/api.test.ts
