@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "type": "module",
+    "jest":{
+    "extensionsToTreatAsEsm": [".ts"]
+  },
   "dependencies": {
     "cors": "^2.8.5"
   },
