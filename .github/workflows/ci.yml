@@ -27,10 +27,10 @@ jobs:
           cache: 'npm'
 
       # 3️⃣ Instalar dependencias compatibles
-      - name: Install TypeScript and ts-node
-  run: |
-    npm install typescript@5.4.0 --save-dev
-    npm install ts-node@10.9.2 --save-dev
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install typescript@5.4.0 ts-node@10.9.2 --save-dev
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
