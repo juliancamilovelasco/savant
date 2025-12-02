@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
  
 export default defineConfig({
-  testDir: './qa-agentic-framework-ts/tests',
+  testDir: './tests',
   testMatch: ['**/*.test.ts'],
   timeout: 30000,
   retries: 0,
