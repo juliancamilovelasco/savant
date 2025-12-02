@@ -48,7 +48,11 @@ jobs:
 
       # 5️⃣ Ejecutar tests con Jest
       - name: Run tests
-        run: npx jest --config jest.config.js tests/api.test.ts
+        run: npx jest --config jest.config.js tests/api.test.
+        
+      # 7️⃣ Ejecutar test específico de Playwright (E2E)
+      - name: Run specific Playwright test
+        run: npx playwright test tests/e2e.test.ts
 
       # 6️⃣ Terminar el servidor
       - name: Stop mock server
