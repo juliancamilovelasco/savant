@@ -37,6 +37,13 @@ jobs:
         run: |
          node --loader ts-node/esm qa-agentic-framework-ts/mockServer.ts &
          echo $! > server.pi
+
+      # 5️⃣ Levantar servidor estático para las pruebas E2E
+      - name: Start HTML server
+        run: |
+          npx serve public --listen 3000 &
+          echo $! > serve.pid
+          sleep 3
          
 
       # 5️⃣ Ejecutar tests con Jest
@@ -48,3 +55,4 @@ jobs:
         if: always()
         run: |
           kill $(cat server.pid) || true
+          kill $(cat serve.pid) || true
