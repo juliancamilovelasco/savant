@@ -1,5 +1,4 @@
 
-import { test, expect } from '@playwright/test';
 import { APIClient } from '../src/utils/apiClient';
 import Ajv from 'ajv';
  
@@ -17,7 +16,7 @@ const client = new APIClient('http://localhost:5000'); //API client pointing to 
  
 test('Valid response', async () => {
   const start = Date.now();
-  const res = await client.sendMessage('savant');
+  const res = await client.sendMessage('Julian');
   const duration = Date.now() - start;
   expect(res.status).toBe(200);  // Check status code 200
   expect(duration).toBeLessThan(500); // Check response time under 500ms
