@@ -30,8 +30,8 @@ jobs:
       - name: Install dependencies
         run: |
           npm install typescript@5.9.3 ts-node@latest jest ts-jest @types/jest --save-dev --legacy-peer-deps
-         # npm ci
-#          npm install @playwright/test@1.57.0 playwright@1.57.0 --save-dev
+      
+          npm install @playwright/test@1.57.0 playwright@1.57.0 --save-dev
 
       # 4️⃣ Levantar el mock server y esperar a que esté listo
       - name: Start mock server
