@@ -1,4 +1,5 @@
 import { test, expect } from '@playwright/test';
+
  
 test('Flujo completo de chat (HTTP)', async ({ page }) => {
   await page.goto('http://localhost:3000/chat.html');

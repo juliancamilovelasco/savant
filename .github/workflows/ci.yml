@@ -50,6 +50,11 @@ jobs:
       # 5️⃣ Ejecutar tests con Jest
       - name: Run tests
         run: npx jest --config jest.config.js tests/api.test.
+
+         # <-- Paso para listar tests de Playwright -->
+      - name: List Playwright tests
+        run: npx playwright test --list
+        working-directory: qa-agentic-framework-ts
         
       # 7️⃣ Ejecutar test específico de Playwright (E2E)
       - name: Run specific Playwright test
