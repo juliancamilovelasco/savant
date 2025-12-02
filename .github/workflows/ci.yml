@@ -54,9 +54,9 @@ jobs:
   
         
       # 7️⃣ Ejecutar test específico de Playwright (E2E)
-      - name: Run specific Playwright test
-        #working-directory: qa-agentic-framework-ts
-        run: npx playwright test tests/playwright/e2e.test.ts
+      - name: Run Playwright tests
+        working-directory: qa-agentic-framework-ts
+        run: npx playwright test -g "Flujo completo de chat (HTTP)"
 
       # 6️⃣ Terminar el servidor
       - name: Stop mock server
