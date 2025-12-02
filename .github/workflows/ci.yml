@@ -53,7 +53,7 @@ jobs:
 
          # <-- Paso para listar tests de Playwright -->
       - name: List Playwright list
-        run: npx playwright test --list
+        run: npx playwright/playwright test --list
         working-directory: qa-agentic-framework-ts
         
       # 7️⃣ Ejecutar test específico de Playwright (E2E)
