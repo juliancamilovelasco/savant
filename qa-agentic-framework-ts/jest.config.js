@@ -2,7 +2,6 @@
 export default {
   preset: 'ts-jest/presets/default-esm', // Soporte para ES Modules
   testEnvironment: 'node',
-  
   transform: {
     '^.+\\.ts$': ['ts-jest', { useESM: true }]
   },
@@ -13,8 +12,6 @@ export default {
     }
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
-  testMatch: ['**/tests/jest/**/*.test.ts'], // <- solo carpeta jest
-  //testMatch: ['**/tests/jest/**/*.test.ts'], // <- apunta a la carpeta Jest
-
+  testMatch: ['**/__tests__/**/*.ts', '**/?(*.)+(spec|test).ts'],
   verbose: true
 };
