@@ -13,7 +13,7 @@ export default {
     }
   },
   moduleFileExtensions: ['ts', 'js', 'json'],
-  testMatch: ['**/__tests__/**/*.ts', '**/?(*.)+(spec|test).ts'],
+  testMatch: ['**/tests/jest/**/*.test.ts'], // <- solo carpeta jest
   //testMatch: ['**/tests/jest/**/*.test.ts'], // <- apunta a la carpeta Jest
 
   verbose: true
