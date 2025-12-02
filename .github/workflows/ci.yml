@@ -52,7 +52,7 @@ jobs:
         run: npx jest --config jest.config.js tests/api.test.
 
          # <-- Paso para listar tests de Playwright -->
-      - name: List Playwright tests
+      - name: List Playwright list
         run: npx playwright test --list
         working-directory: qa-agentic-framework-ts
         

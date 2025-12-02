@@ -1,5 +1,5 @@
 
-import { APIClient } from '../src/utils/apiClient';
+import { APIClient } from '../../src/utils/apiClient';
 import Ajv from 'ajv';
  
 const ajv = new Ajv();
