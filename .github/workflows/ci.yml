@@ -51,6 +51,9 @@ jobs:
       - name: Run tests
         run: npx jest --config jest.config.js tests/jest/api.test.
 
+      - name: Run Playwright verbose
+        run: npx playwright test --verbose
+        working-directory: qa-agentic-framework-ts
         
       # 7️⃣ Ejecutar test específico de Playwright (E2E)
       - name: Run specific Playwright test
