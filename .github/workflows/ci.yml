@@ -19,10 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      - name: List tests folder
-        run: ls -R tests
-
-
       # 2️⃣ Configurar Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
